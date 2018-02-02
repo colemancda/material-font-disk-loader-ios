@@ -16,7 +16,8 @@
 
 #import <XCTest/XCTest.h>
 
-#import "MaterialFontDiskLoader.h"
+@import MDFFontDiskLoader;
+//#import "MaterialFontDiskLoader.h"
 
 static const CGFloat kEpsilonAccuracy = 0.001f;
 
@@ -51,7 +52,9 @@ static NSString *kBlackPixel = @"BlackPixel.png";
 @implementation FontDiskLoaderTests
 
 - (MDFFontDiskLoader *)validFontLoader {
-  NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(MDFRobotoFontLoaderClassname)];
+    
+  NSBundle *bundle = [NSBundle bundleForClass:FontDiskLoaderTests.class];
+    
   return [[MDFFontDiskLoader alloc] initWithFontName:MDFRobotoRegularFontName
                                             filename:MDFRobotoRegularFontFilename
                                       bundleFileName:MDFRobotoBundle
